@@ -25,10 +25,10 @@ const App: React.FC = () => {
   const _updateSettings = (e: React.ChangeEvent<HTMLInputElement>) => {
     let _settings = { ...settings };
 
-    const key = e.target.getAttribute('data-type');
-    if (key !== null && key in _settings) {
-      _settings[key] = +e.target.value;
-    }
+    // const key = e.target.getAttribute('data-type');
+    // if (key !== null && key in _settings) {
+    //   _settings[key] = +e.target.value;
+    // }
 
     switch (e.target.getAttribute('data-type')) {
       case 'containerHeight':
