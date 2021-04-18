@@ -1,0 +1,34 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.values {
+  width: 500px;
+  padding: 20px;
+  font-family: "Roboto";
+  font-size: 14px;
+  line-height: 28px;
+  color: #999999;
+}
+
+.values input {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Roboto";
+  background: #eeeeee;
+  border-radius: 10px;
+  border: 0;
+  padding: 10px 15px;
+}
+
+.values input:focus {
+  outline: none;
+}
+
+button {
+  margin-top: 10px;
+}
