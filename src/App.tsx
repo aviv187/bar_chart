@@ -32,19 +32,19 @@ const App: React.FC = () => {
 
     switch (e.target.getAttribute('data-type')) {
       case 'containerHeight':
-        _settings['containerHeight'] = +e.target.value;
+        _settings.containerHeight = +e.target.value;
         break;
       case 'containerWidth':
-        _settings['containerWidth'] = +e.target.value;
+        _settings.containerWidth = +e.target.value;
         break;
       case 'barGap':
-        _settings['barGap'] = +e.target.value;
+        _settings.barGap = +e.target.value;
         break;
       case 'maxValue':
-        _settings['maxValue'] = +e.target.value;
+        _settings.maxValue = +e.target.value;
         break;
       case 'valuesArrLength':
-        _settings['valuesArrLength'] = +e.target.value;
+        _settings.valuesArrLength = +e.target.value;
         break;
       default:
         break;
@@ -99,19 +99,45 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <div className="values">
-        Enter the container height:
-        <input type="number" data-type='containerHeight' value={settings.containerHeight} onChange={_updateSettings} />
-        Enter the container width:
-        <input type="number" data-type='containerWidth' value={settings.containerWidth} onChange={_updateSettings} />
-        Enter the bar gap:
-        <input type="number" data-type='barGap' value={settings.barGap} onChange={_updateSettings} />
-        Enter values separated by comma:
-        <input type="text" value={values} onChange={_updateValues} />
-          Enter the number of values:
-        <input type="number" data-type='valuesArrLength' value={settings.valuesArrLength} onChange={_updateSettings} />
-        Enter the max value:
-        <input type="number" data-type='maxValue' value={settings.maxValue} onChange={_updateSettings} />
-        <button onClick={_changeValueArrey}>add/delete values</button>
+        <div>
+          <td>
+            <tr>Container height:</tr>
+            <tr>
+              <input type="number" data-type='containerHeight' value={settings.containerHeight} onChange={_updateSettings} />
+            </tr>
+          </td>
+          <td>
+            <tr>Container width:</tr>
+            <tr>
+              <input type="number" data-type='containerWidth' value={settings.containerWidth} onChange={_updateSettings} />
+            </tr>
+          </td>
+          <td >
+            <tr>Bar gap:</tr>
+            <tr>
+              <input type="number" data-type='barGap' value={settings.barGap} onChange={_updateSettings} />
+            </tr>
+          </td>
+        </div>
+          Enter values separated by comma:
+          <input type="text" value={values} onChange={_updateValues} />
+        <div>
+          <td>
+            <tr>Number of values:</tr>
+            <tr>
+              <input type="number" data-type='valuesArrLength' value={settings.valuesArrLength} onChange={_updateSettings} />
+            </tr>
+          </td>
+          <td>
+            <tr>Max value:</tr>
+            <tr>
+              <input type="number" data-type='maxValue' value={settings.maxValue} onChange={_updateSettings} />
+            </tr>
+          </td>
+          <td>
+            <button onClick={_changeValueArrey}>add/delete values</button>
+          </td>
+        </div>
       </div>
       <BarChart values={values} containerHeight={settings.containerHeight} containerWidth={settings.containerWidth} barGap={settings.barGap} />
     </div>

@@ -25,10 +25,16 @@
   padding: 10px 15px;
 }
 
-.values input:focus {
-  outline: none;
+.values td button{
+  border: 1px solid #1976d2;
+  border-radius: 5px;
+  transform: translateY(75%);
 }
 
-button {
-  margin-top: 10px;
+.values tr input{
+  width: 60%;
+}
+
+.values input:focus {
+  outline: none;
 }
