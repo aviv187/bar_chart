@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./BarChart.css";
+import "../css/BarChart.css";
 
 interface BarChartProps {
   values: string[],
