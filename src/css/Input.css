@@ -4,10 +4,16 @@
   font-family: "Roboto";
   font-size: 14px;
   line-height: 28px;
-  color: #999999;
 }
 
-.values input {
+.value {
+  margin-right: 10px;
+}
+.value::last-child {
+  margin-right: 0;
+}
+
+input {
   width: 100%;
   font-size: 18px;
   font-weight: bold;
@@ -16,18 +22,8 @@
   border-radius: 10px;
   border: 0;
   padding: 10px 15px;
+  box-sizing: border-box;
 }
-
-.values td button{
-  border: 1px solid #1976d2;
-  border-radius: 5px;
-  transform: translateY(75%);
-}
-
-.values tr input{
-  width: 60%;
-}
-
-.values input:focus {
+input:focus {
   outline: none;
 }

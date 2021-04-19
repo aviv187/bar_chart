@@ -3,9 +3,8 @@ import React, { useState, useEffect } from "react";
 import "./css/App.css";
 
 import BarChart from "./components/BarChart";
-import InputsComponent from "./components/Inputs"
+import InputsComponent from "./components/form"
 import SettingsModel from "./models/settings"
-
 
 const App: React.FC = () => {
   const [values, setValues] = useState(['10', '20', '30']);
@@ -18,31 +17,11 @@ const App: React.FC = () => {
   });
 
   const _updateSettings = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let _settings = { ...settings };
+    let _settings: any = { ...settings };
 
-    // const key = e.target.getAttribute('data-type');
-    // if (key !== null && key in _settings) {
-    //   _settings[key] = +e.target.value;
-    // }
-
-    switch (e.target.getAttribute('data-type')) {
-      case 'containerHeight':
-        _settings.containerHeight = +e.target.value;
-        break;
-      case 'containerWidth':
-        _settings.containerWidth = +e.target.value;
-        break;
-      case 'barGap':
-        _settings.barGap = +e.target.value;
-        break;
-      case 'maxValue':
-        _settings.maxValue = +e.target.value;
-        break;
-      case 'valuesArrLength':
-        _settings.valuesArrLength = +e.target.value;
-        break;
-      default:
-        break;
+    const key = e.target.getAttribute('data-type');
+    if (key !== null && key in _settings) {
+      _settings[key] = +e.target.value;
     }
 
     setSettings(_settings);

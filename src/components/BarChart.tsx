@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import "../css/BarChart.css";
 
 interface BarChartProps {
-  values: string[],
-  containerHeight: number,
-  containerWidth: number,
-  barGap: number
-};
+  values: string[];
+  containerHeight: number;
+  containerWidth: number;
+  barGap: number;
+}
 
-const BarChart: React.FC<BarChartProps> = props => {
+const BarChart: React.FC<BarChartProps> = (props) => {
   const barValues = props.values;
   const containerHeight = props.containerHeight;
   const containerW = props.containerWidth;
@@ -34,15 +34,17 @@ const BarChart: React.FC<BarChartProps> = props => {
     });
 
     setMaxH(_max);
-    setBarWidth((containerWidth - (barValues.length - 1) * barGap) / barValues.length);
+    setBarWidth(
+      (containerWidth - (barValues.length - 1) * barGap) / barValues.length
+    );
   }, [barValues, containerWidth, barGap]);
 
   return (
     <div
       className="barChartContainer"
       style={{
-        width: containerWidth + 'px',
-        height: containerHeight + 'px',
+        width: containerWidth + "px",
+        height: containerHeight + "px"
       }}
     >
       {barValues.map((barValue, index) => (
@@ -50,9 +52,12 @@ const BarChart: React.FC<BarChartProps> = props => {
           key={`bar_${index}`}
           className="bar"
           style={{
-            transform: `translateX(${index * (barWidth + barGap) + barWidth / 2}px)
-                        translateY(${(+barValue * (containerHeight / maxH)) / 2}px)
-                        scale(${barWidth}, ${+barValue * (containerHeight / maxH)})`,
+            transform: `translateX(${index * (barWidth + barGap) + barWidth / 2
+              }px)
+                        translateY(${(+barValue * (containerHeight / maxH)) / 2
+              }px)
+                        scale(${barWidth}, ${+barValue * (containerHeight / maxH)
+              })`
           }}
         />
       ))}

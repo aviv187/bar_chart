@@ -1,0 +1,28 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 3px;
+}
+
+button {
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #1c732f;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+button.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
