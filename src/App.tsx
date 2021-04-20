@@ -7,7 +7,14 @@ import InputsComponent from "./components/form"
 import SettingsModel from "./models/settings"
 
 const App: React.FC = () => {
-  const [values, setValues] = useState(['10', '20', '30']);
+  const [values, setValues] = useState<string[]>(() => {
+    let vals = localStorage.getItem('values');
+    if (vals) {
+      return JSON.parse(vals);
+    }
+    return ['10', '20', '30'];
+  }
+  );
   const [settings, setSettings] = useState<SettingsModel>({
     valuesArrLength: values.length,
     containerHeight: 400,
@@ -67,7 +74,9 @@ const App: React.FC = () => {
 
       return _settings;
     });
-  }, [values]);
+
+    localStorage.setItem('values', JSON.stringify(values));
+  }, [values, setSettings]);
 
   return (
     <div className="App">

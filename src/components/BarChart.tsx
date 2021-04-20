@@ -37,7 +37,7 @@ const BarChart: React.FC<BarChartProps> = (props) => {
     setBarWidth(
       (containerWidth - (barValues.length - 1) * barGap) / barValues.length
     );
-  }, [barValues, containerWidth, barGap]);
+  }, [barValues, containerWidth, barGap, setMaxH, setBarWidth]);
 
   return (
     <div
