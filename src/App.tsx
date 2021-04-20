@@ -22,9 +22,9 @@ const App: React.FC = () => {
     const key = e.target.getAttribute('data-type');
     if (key !== null && key in _settings) {
       _settings[key] = +e.target.value;
-    }
 
-    setSettings(_settings);
+      setSettings(_settings);
+    }
   }
 
 
