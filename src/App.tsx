@@ -13,8 +13,7 @@ const App: React.FC = () => {
       return JSON.parse(vals);
     }
     return ['10', '20', '30'];
-  }
-  );
+  });
   const [settings, setSettings] = useState<SettingsModel>({
     valuesArrLength: values.length,
     containerHeight: 400,
