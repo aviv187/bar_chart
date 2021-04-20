@@ -18,15 +18,14 @@ const App: React.FC = () => {
 
   const _updateSettings = (e: React.ChangeEvent<HTMLInputElement>) => {
     let _settings: any = { ...settings };
-
     const key = e.target.getAttribute('data-type');
+
     if (key !== null && key in _settings) {
       _settings[key] = +e.target.value;
 
       setSettings(_settings);
     }
   }
-
 
   const _updateValues = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValues(e.target.value.split(','));
